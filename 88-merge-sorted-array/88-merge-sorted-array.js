@@ -7,13 +7,13 @@
  */
 
 var merge = function (nums1, m, nums2, n) {
-  if (m === 0) {
-    nums1.splice(0, nums1.length);
-    nums2.map((el) => nums1.push(el));
-    return nums1.sort(function (a, b) {
-      return a - b;
-    });
-  }
+  // if (m === 0) {
+  //   nums1.splice(0, nums1.length);
+  //   nums2.map((el) => nums1.push(el));
+  //   return nums1.sort(function (a, b) {
+  //     return a - b;
+  //   });
+  // }
   nums1.splice(nums1.length - n, n);
   nums2.map((el) => nums1.push(el));
   return nums1.sort(function (a, b) {
