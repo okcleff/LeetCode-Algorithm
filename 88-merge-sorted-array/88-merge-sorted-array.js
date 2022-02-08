@@ -7,9 +7,6 @@
  */
 
 var merge = function (nums1, m, nums2, n) {
-  nums1.splice(nums1.length - n, n);
-  nums2.map((el) => nums1.push(el));
-  return nums1.sort(function (a, b) {
-    return a - b;
-  });
+  nums1.splice(m, n, ...nums2);
+  return nums1.sort((a, b) => a - b);
 };
