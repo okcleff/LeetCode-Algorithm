@@ -28,8 +28,11 @@ var lengthOfLastWord = function (s) {
   if (s.length === 1) return 1;
 
   const arr = s.split('');
-  const arr2 = delBlank(arr);
-  const arr3 = findBlank(arr2);
 
-  return arr3.length;
+  if (arr[arr.length - 1] === ' ') {
+    const deleted = delBlank(arr);
+    return findBlank(deleted).length;
+  } else {
+    return findBlank(arr).length;
+  }
 };
