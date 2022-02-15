@@ -9,8 +9,8 @@ var isHappy = function (n) {
       .toString()
       .split('')
       .reduce((a, b) => a + b * b, 0);
-    if (arr[n]) return false;
-    arr[n] = true;
+    if (arr.indexOf(n) !== -1) return false;
+    arr.push(n);
   }
   return true;
 };
