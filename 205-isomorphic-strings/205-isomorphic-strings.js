@@ -12,7 +12,7 @@ var isIsomorphic = function(s, t) {
     return result;
   };
 
-  const checker = (str1, str2, obj) => {
+  const doesMatch = (str1, str2, obj) => {
     const arr = str1.split('');
     for (let i = 0; i < str1.length; i++) {
       arr[i] = obj[str1[i]];
@@ -20,5 +20,5 @@ var isIsomorphic = function(s, t) {
     return arr.join('') === str2 ? true : false;
   };
 
-  return checker(s, t, obj(s, t)) && checker(t, s, obj(t, s));
+  return doesMatch(s, t, obj(s, t)) && doesMatch(t, s, obj(t, s));
 };
