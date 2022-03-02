@@ -4,9 +4,9 @@
  * @return {string}
  */
 var restoreString = function(s, indices) {
-  const copied = [...indices];
+  const arr = [];
   for (let i = 0; i < s.length; i++) {
-    copied[i] = s[indices.indexOf(i)];
+    arr.push(s[indices.indexOf(i)]);
   }
-  return copied.join('');
+  return arr.join('');
 };
