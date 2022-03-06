@@ -2,12 +2,13 @@
  * @param {number} num
  * @return {boolean}
  */
-var isPerfectSquare = function(num) {
-  if (num === 1) return true;
-  let result = 1;
-  while (result < num) {
-    if (result * result === num) return true;
-    result++;
+var isPerfectSquare = function (num) {
+  let base = 1;
+  let squared = base * base;
+  while (squared <= num) {
+    if (squared === num) return true;
+    base++;
+    squared = base * base;
   }
   return false;
 };
