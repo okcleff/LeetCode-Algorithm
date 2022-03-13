@@ -4,7 +4,6 @@
  * @return {number}
  */
 var numJewelsInStones = function(jewels, stones) {
-  const obj = {};
   const arr = stones.split('');
   for (let i = arr.length - 1; i >= 0; i--) {
     if (jewels.indexOf(arr[i]) === -1) {
