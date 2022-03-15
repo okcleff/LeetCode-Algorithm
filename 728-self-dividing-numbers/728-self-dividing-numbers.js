@@ -3,7 +3,6 @@
  * @param {number} right
  * @return {number[]}
  */
-var selfDividingNumbers = function(left, right) {
   const isSelfDividing = (num) => {
     const str = num.toString();
     for (let i = 0; i < str.length; i++) {
@@ -12,6 +11,7 @@ var selfDividingNumbers = function(left, right) {
     return num;
   };
 
+var selfDividingNumbers = function(left, right) {
   const arr = [];
   for (let i = left; i < right + 1; i++) {
     arr.push(i);
