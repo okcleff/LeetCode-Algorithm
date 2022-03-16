@@ -17,7 +17,7 @@ var matrixReshape = function (mat, r, c) {
 
   let result = [];
   for (let i = 0; i < r; i++) {
-    result.push([...concat.splice(0, c)]);
+    result.push(concat.splice(0, c));
   }
 
   return result;
