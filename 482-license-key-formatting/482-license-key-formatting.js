@@ -4,11 +4,11 @@
  * @return {string}
  */
 var licenseKeyFormatting = function(s, k) {
-  const str = s.toUpperCase().split('-').join('');
+  const deleteHyphen = s.toUpperCase().split('-').join('');
   let arr = [];
-  let sLeng = str.length;
+  let sLeng = deleteHyphen.length;
   for (let i = sLeng; i > 0; i -= k) {
-    arr.unshift(str.substring(i - k, i));
+    arr.unshift(deleteHyphen.substring(i - k, i));
   }
   return arr.join('-');
 };
