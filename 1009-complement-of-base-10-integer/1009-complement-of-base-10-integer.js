@@ -3,9 +3,10 @@
  * @return {number}
  */
 var bitwiseComplement = function(n) {
-  const binary = n.toString(2);
-  const complement = [...binary].map((bin) =>
-    bin === '0' ? (bin = '1') : (bin = '0')
+  return parseInt(
+    [...n.toString(2)]
+      .map((bin) => (bin === '0' ? (bin = '1') : (bin = '0')))
+      .join(''),
+    2
   );
-  return parseInt(complement.join(''), 2);
 };
