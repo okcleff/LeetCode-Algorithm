@@ -18,6 +18,7 @@ var removeElements = function(head, val) {
     }
     
     let curr = head;
+    
     while(curr && curr.next) {
         curr.next.val === val ? curr.next = curr.next.next : curr = curr.next;
     }
