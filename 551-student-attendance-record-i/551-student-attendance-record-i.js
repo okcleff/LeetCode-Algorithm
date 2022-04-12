@@ -8,7 +8,8 @@ var checkRecord = function(s) {
     let absence = 0;
     for(let i = 0; i < s.length; i++){
         if(s[i] === 'A') absence++;
+        if(absence > 1) return false;
     }
     
-    return absence >= 2 ? false: true;
+    return true;
 };
