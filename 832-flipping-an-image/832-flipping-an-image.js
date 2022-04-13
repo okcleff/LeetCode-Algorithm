@@ -3,9 +3,9 @@
  * @return {number[][]}
  */
 var flipAndInvertImage = function(image) {
-  let result = [];
+  let answer = [];
   image.map((img) =>
-    result.push(img.reverse().map((bin) => (bin === 1 ? (bin = 0) : (bin = 1))))
+    answer.push(img.reverse().map((bin) => (bin === 1 ? (bin = 0) : (bin = 1))))
   );
-  return result;
+  return answer;
 };
