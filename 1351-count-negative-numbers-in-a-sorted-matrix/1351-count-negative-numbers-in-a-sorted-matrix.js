@@ -4,8 +4,7 @@
  */
 var countNegatives = function(grid) {
   let count = 0;
-  grid.map((arr) => {
-    arr.map((num) => (num < 0 ? count++ : null));
-  });
+  const concat = grid.reduce((a, b) => [...a, ...b]);
+  concat.map((num) => (num < 0 ? count++ : 0));
   return count;
 };
