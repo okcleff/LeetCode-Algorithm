@@ -3,5 +3,5 @@
  * @return {number}
  */
 var minPartitions = function(n) {
-  return Math.max(...[...new Set([...n])]);
+  return Math.max(...n);
 };
