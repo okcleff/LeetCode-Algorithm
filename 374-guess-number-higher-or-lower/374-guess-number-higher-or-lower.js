@@ -12,13 +12,16 @@
  * @return {number}
  */
 var guessNumber = function(n) {
-    let left = 1, right = n;
-    while(left <= right) {
-        let mid = Math.trunc((left + right) / 2);
-        const check = guess(mid);
-        if(!check) return mid;
-        if(check < 0) right = mid - 1;
-        else left = mid + 1;
+  let left = 1, right = n;
+  while(left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    const check = guess(mid);
+    if(!check) return mid;
+    if(check === -1) {
+        right = mid - 1
+    } else {
+      left = mid + 1;
     }
-    return left
+  }
+  return left;
 };
