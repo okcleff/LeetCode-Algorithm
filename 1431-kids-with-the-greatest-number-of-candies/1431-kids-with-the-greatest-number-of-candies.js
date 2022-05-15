@@ -4,7 +4,8 @@
  * @return {boolean[]}
  */
 var kidsWithCandies = function(candies, extraCandies) {
+  const max = Math.max(...candies)
   return candies.map((num) =>
-    num + extraCandies >= Math.max(...candies) ? true : false
+    num + extraCandies >= max
   );
 };
