@@ -5,11 +5,8 @@
  */
 var decode = function(encoded, first) {
   const answer = [first];
-  let bit = first;
   for (let i = 0; i < encoded.length; i++) {
-    let decoded = bit ^ encoded[i];
-    answer.push(decoded);
-    bit = decoded;
+    answer.push(answer[i] ^ encoded[i]);
   }
   return answer;
 };
