@@ -4,7 +4,8 @@
  */
 var replaceElements = function(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    arr[i] = Math.max(...[...arr].slice(i + 1));
+    const right = arr.slice(i + 1);
+    arr[i] = Math.max(...right);
   }
   arr.pop();
   arr.push(-1);
