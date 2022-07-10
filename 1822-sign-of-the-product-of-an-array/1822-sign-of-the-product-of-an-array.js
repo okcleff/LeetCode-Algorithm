@@ -4,6 +4,5 @@
  */
 var arraySign = function(nums) {
   if(nums.includes(0)) return 0;
-  const product = nums.reduce((acc, curr) => acc * curr);
-  return product > 0 ? 1 : -1;
+  return nums.filter(num => num < 0).length % 2 === 0 ? 1 : -1;
 };
