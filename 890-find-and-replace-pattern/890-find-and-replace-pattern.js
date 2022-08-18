@@ -9,10 +9,6 @@ var findAndReplacePattern = function(words, pattern) {
 	return words
 		.filter((word) => {
 			const wordSet = new Set([...word]);
-			return wordSet.size === patternSet.size;
-		})
-		.filter((word) => {
-			const wordSet = new Set([...word]);
 
 			let obj = {};
 			[...wordSet].map((char, idx) => {
