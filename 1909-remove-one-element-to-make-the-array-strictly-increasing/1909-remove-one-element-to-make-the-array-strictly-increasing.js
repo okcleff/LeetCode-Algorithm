@@ -8,10 +8,7 @@ var canBeIncreasing = function(nums) {
 		copied.splice(i, 1);
 		const sorted = [...copied].sort((a, b) => a - b);
 
-		let isIncreasing = true;
-		for (let i = 0; i < copied.length - 1; i++) {
-			if (copied[i] >= copied[i + 1]) isIncreasing = false;
-		}
+		let isIncreasing = copied.length === [...new Set(copied)].length;
 
 		if (copied.join('') === sorted.join('') && isIncreasing) return true;
 	}
