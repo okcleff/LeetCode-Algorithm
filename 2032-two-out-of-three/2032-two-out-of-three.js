@@ -5,21 +5,17 @@
  * @return {number[]}
  */
 var twoOutOfThree = function(nums1, nums2, nums3) {
-	const answer = [];
-	const every = new Set([...nums1, ...nums2, ...nums3]);
-	const hash = {
-		1: nums1,
-		2: nums2,
-		3: nums3,
-	};
-
-	[...every].map((num) => {
-		let count = 0;
-		for (let key in hash) {
-			if (hash[key].includes(num)) count++;
-		}
-		if (count > 1) answer.push(num);
+	const every = [...new Set(nums1), ...new Set(nums2), ...new Set(nums3)];
+                                                                  
+	const map = new Map();
+	every.map((num) => {
+		map.set(num, map.has(num) ? map.get(num) + 1 : 1);
 	});
+
+	const answer = [];
+	for (let [k, v] of map) {
+		if (v > 1) answer.push(k);
+	}
 
 	return answer;
 };
