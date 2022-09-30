@@ -4,14 +4,14 @@
  * @return {number[]}
  */
 var shortestToChar = function(s, c) {
-	const cIndex = [];
+	const cIndices = [];
 	[...s].map((char, idx) => {
-		if (char === c) cIndex.push(idx);
+		if (char === c) cIndices.push(idx);
 	});
 
-	return [...s].map((char, idx) => {
+	return [...s].map((_, idx) => {
 		let min = Infinity;
-		cIndex.map((num) => {
+		cIndices.map((num) => {
 			min = Math.min(min, Math.abs(idx - num));
 		});
 		return min;
