@@ -12,7 +12,7 @@ var maximumPopulation = function(logs) {
 		}
 	});
 
-	let answer = Infinity;
+	let answer;
 	let people = 0;
 	for (let [k, v] of population) {
 		if (v > people) {
