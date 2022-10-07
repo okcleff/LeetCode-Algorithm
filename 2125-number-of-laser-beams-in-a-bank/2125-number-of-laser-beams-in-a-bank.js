@@ -7,7 +7,7 @@ var numberOfBeams = function(bank) {
 	if (bank.length === 1) return 0;
 
 	const countLaser = (line) => {
-		return [...line].filter((laser) => laser === '1').length;
+		return line.replaceAll('0', '').length;
 	};
 
 	let answer = 0;
