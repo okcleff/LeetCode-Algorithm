@@ -5,11 +5,9 @@
  */
 var countPoints = function(points, queries) {
 	return queries.map((circle) => {
+		const [x, y, r] = circle;
 		return points.filter((p) => {
-			return (
-				Math.sqrt((p[0] - circle[0]) ** 2 + (p[1] - circle[1]) ** 2) <=
-				circle[2]
-			);
+			return Math.sqrt((p[0] - x) ** 2 + (p[1] - y) ** 2) <= r;
 		}).length;
 	});
 };
