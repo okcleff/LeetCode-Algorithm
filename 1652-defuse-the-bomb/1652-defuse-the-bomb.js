@@ -13,7 +13,7 @@ var decrypt = function(code, k) {
 			while (count < k) {
 				if (j === code.length) j = 0;
 				answer[i] += code[j];
-				count = count + 1;
+				count++;
 				j++;
 			}
 		}
@@ -26,7 +26,7 @@ var decrypt = function(code, k) {
 			while (count > k) {
 				if (j === -1) j = code.length - 1;
 				answer[i] += code[j];
-				count = count - 1;
+				count--;
 				j--;
 			}
 		}
