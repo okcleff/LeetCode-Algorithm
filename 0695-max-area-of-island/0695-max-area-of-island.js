@@ -6,7 +6,7 @@ var maxAreaOfIsland = function(grid) {
 	const m = grid.length;
 	const n = grid[0].length;
 
-	function count(grid, i, j) {
+	const count = (grid, i, j) => {
 		if (i < 0 || j < 0 || i >= m || j >= n || grid[i][j] === 0) return 0;
 
 		grid[i][j] = 0;
