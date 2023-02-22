@@ -4,7 +4,9 @@
  */
 var isPathCrossing = function(path) {
 	const point = [0, 0];
-	const arr = [point.join()];
+	const map = new Map();
+	map.set(point.join(), true);
+
 	for (let i = 0; i < path.length; i++) {
 		const dir = path[i];
 		dir === 'N'
@@ -15,12 +17,11 @@ var isPathCrossing = function(path) {
 			? point[0]++
 			: point[0]--;
 
-		if (arr.includes(point.join())) {
+		if (map.has(point.join())) {
 			return true;
 		} else {
-			arr.push(point.join());
+			map.set(point.join(), true);
 		}
 	}
-
 	return false;
 };
