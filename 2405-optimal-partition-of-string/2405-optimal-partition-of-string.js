@@ -9,7 +9,7 @@ var partitionString = function(s) {
   for (let i = 0; i < s.length; i++) {
     if (map.has(s[i])) {
       answer++;
-      map = new Map();
+      map.clear();
     }
     map.set(s[i], 1);
   }
