@@ -12,10 +12,6 @@
  * @return {TreeNode}
  */
 var removeLeafNodes = function(root, target) {
-  if (!root) {
-    return null;
-  }
-    
   if (root.left) {
     root.left = removeLeafNodes(root.left, target);
   }
