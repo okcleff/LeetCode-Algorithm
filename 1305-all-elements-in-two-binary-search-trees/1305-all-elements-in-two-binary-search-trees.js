@@ -15,7 +15,7 @@ var getAllElements = function(root1, root2) {
   const answer = [];
   
   const dfs = (root) => {
-    if (!root) return null;
+    if (!root) return;
     
     if (root) {
       answer.push(root.val);
