@@ -4,9 +4,6 @@
  * @return {number[]}
  */
 var findIntersectionValues = function(nums1, nums2) {
-  let nums1Count = 0;
-  let nums2Count = 0;
-  
   const countCommonElements = (arr1, arr2) => {
     let count = 0;
     for (let i = 0; i < arr1.length; i++) {
