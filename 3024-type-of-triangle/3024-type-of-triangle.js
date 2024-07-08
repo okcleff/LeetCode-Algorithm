@@ -3,9 +3,9 @@
  * @return {string}
  */
 var triangleType = function(nums) {
-  const [a, b, c] = nums;
+  const [a, b, c] = [...nums].sort((a, b) => a - b);
   
-  if (a + b <= c || a + c <= b || b + c <= a) return 'none';
+  if (a + b <= c) return 'none';
 
   const set = new Set(nums);
 
