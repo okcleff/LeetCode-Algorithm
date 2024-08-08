@@ -32,25 +32,3 @@ var getMinimumDifference = function(root) {
   
   return answer;
 };
-
-// var getMinimumDifference = function (root) {
-//   let res = Infinity;
-//   let prev = undefined;
-
-//   const traverse = (node) => {
-//     if (!node) return;
-
-//     traverse(node.left);
-
-//     if (prev !== undefined) {
-//       res = Math.min(res, node.val - prev);
-//     }
-//     prev = node.val;
-
-//     traverse(node.right);
-//   };
-
-//   traverse(root);
-
-//   return res;
-// };
