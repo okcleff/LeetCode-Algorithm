@@ -10,47 +10,47 @@
  * @param {TreeNode} root
  * @return {number}
  */
-// var getMinimumDifference = function(root) {
-//   let prev;
-//   let answer = Infinity;
-  
-//   const traverse = (node) => {
-//     if (!node) return;
-    
-//     traverse(node.left);
-    
-//     if (prev) {
-//       answer = Math.min(answer, Math.abs(prev - node.val)); 
-//     }
-        
-//     prev = node.val;
-    
-//     traverse(node.right);
-//   }
-  
-//   traverse(root);
-  
-//   return answer;
-// };
-
-var getMinimumDifference = function (root) {
-  let res = Infinity;
+var getMinimumDifference = function(root) {
+  let answer = Infinity;
   let prev = undefined;
-
+  
   const traverse = (node) => {
     if (!node) return;
-
+    
     traverse(node.left);
-
+    
     if (prev !== undefined) {
-      res = Math.min(res, node.val - prev);
+      answer = Math.min(answer, node.val - prev); 
     }
+        
     prev = node.val;
-
+    
     traverse(node.right);
-  };
-
+  }
+  
   traverse(root);
-
-  return res;
+  
+  return answer;
 };
+
+// var getMinimumDifference = function (root) {
+//   let res = Infinity;
+//   let prev = undefined;
+
+//   const traverse = (node) => {
+//     if (!node) return;
+
+//     traverse(node.left);
+
+//     if (prev !== undefined) {
+//       res = Math.min(res, node.val - prev);
+//     }
+//     prev = node.val;
+
+//     traverse(node.right);
+//   };
+
+//   traverse(root);
+
+//   return res;
+// };
