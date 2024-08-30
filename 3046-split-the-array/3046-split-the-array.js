@@ -5,12 +5,9 @@
 var isPossibleToSplit = function(nums) {
   const map = new Map();
   
-  nums.forEach(num => {
-    map.set(num, map.get(num) ? map.get(num) + 1 : 1)
-  })
-  
-  for (let [key, value] of map) {
-    if (value > 2) return false;
+  for (let i = 0; i < nums.length; i++) {
+    if (map.get(nums[i]) === 2) return false;
+    map.set(nums[i], map.get(nums[i]) ? map.get(nums[i]) + 1 : 1);
   }
   
   return true;
