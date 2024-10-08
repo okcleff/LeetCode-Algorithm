@@ -3,22 +3,24 @@
  * @return {number}
  */
 var findShortestSubArray = function(nums) {
-  const dict = new Map();
-  
-  nums.forEach(num => {
-    dict.set(num, dict.get(num) ? dict.get(num) + 1 : 1);
-  })
-  
-  const degree = Math.max(...Array.from(dict.values()));;
-  
-  let answer = Infinity;
-  
-  for (const [key, value] of dict) {
-    if (value === degree) {
-      const length = nums.lastIndexOf(key) - nums.indexOf(key) + 1;
-      answer = Math.min(answer, length);
+  const freq = new Map();
+  const firstIndex = new Map();
+  let degree = 0;
+  let answer = 0;
+
+  nums.forEach((num, i) => {
+    if (!firstIndex.has(num)) firstIndex.set(num, i);
+    
+    const count = (freq.get(num) || 0) + 1;
+    freq.set(num, count);
+
+    if (count > degree) {
+      degree = count;
+      answer = i - firstIndex.get(num) + 1;
+    } else if (count === degree) {
+      answer = Math.min(answer, i - firstIndex.get(num) + 1);
     }
-  }
-  
+  });
+
   return answer;
 };
